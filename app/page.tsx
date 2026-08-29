@@ -10,8 +10,8 @@ export default function Home() {
   return <main className="rustic-site">
     <nav className="rustic-nav" aria-label="Main navigation">
       <a className="rustic-brand" href="#top" aria-label="Upper Crust home"><span className="brand-crest">UC</span><span><strong>Upper Crust</strong><small>Cosy café · Llandudno</small></span></a>
-      <div className="rustic-links"><a href="#food">Food</a><a href="#our-place">Our place</a><a href="#visit">Visit</a></div>
-      <a className="rustic-call" href="tel:+441492000000">Call us <span>→</span></a>
+      <div className="rustic-links"><a href="#food">Food</a><a href="#our-place">Our place</a><a href="#reviews">Reviews</a><a href="#visit">Visit</a></div>
+      <a className="rustic-call" href="tel:+441492490218">Call us <span>→</span></a>
     </nav>
 
     <header className="rustic-hero" id="top">
@@ -24,7 +24,7 @@ export default function Home() {
         <p className="hero-intro">A friendly little café in Llandudno, full of character, homemade favourites and the smell of fresh coffee.</p>
         <div className="hero-buttons"><a className="wood-button" href="#food">See what’s cooking</a><a className="soft-link" href="#visit">Plan your visit <span>↓</span></a></div>
       </div>
-      <div className="open-board"><span>Today</span><strong>Open 8—4</strong><small>Pop in, no booking needed</small></div>
+      <div className="open-board"><span>Mon—Sat</span><strong>From 9:30</strong><small>Sunday closed</small></div>
       <div className="hanging-lamp lamp-a"/><div className="hanging-lamp lamp-b"/><div className="hanging-lamp lamp-c"/>
     </header>
 
@@ -33,7 +33,7 @@ export default function Home() {
     <section className="food-section" id="food">
       <div className="food-heading"><div><p className="section-kicker">From our kitchen</p><h2>Something lovely<br/>for <em>everyone.</em></h2></div><div className="heading-note"><Heart>Good mood food</Heart><p>Breakfasts, light lunches, comforting classics and plenty of homemade sweet things—served without fuss and with a smile.</p></div></div>
       <div className="favourites-grid">{favourites.map((item,i)=><article className="favourite-card" key={item.name}><div className="food-photo" style={{backgroundImage:`url('${item.image}')`}}><span>{item.tag}</span></div><div className="food-caption"><span>0{i+1}</span><div><h3>{item.name}</h3><p>{item.detail}</p></div></div></article>)}</div>
-      <div className="chalk-specials"><div className="chalk-title"><span>Today’s good stuff</span><h3>From the chalkboard</h3></div><ul><li><span>Welsh rarebit on toast</span><i>••••</i><strong>£9.50</strong></li><li><span>Soup & a doorstep sandwich</span><i>••••</i><strong>£8.95</strong></li><li><span>Homemade cake & a cuppa</span><i>••••</i><strong>£6.50</strong></li></ul><a href="mailto:hello@uppercrustllandudno.co.uk">Ask about today’s specials →</a></div>
+      <div className="chalk-specials"><div className="chalk-title"><span>Upper Crust favourites</span><h3>Home-cooked & hearty</h3></div><ul><li><span>Cooked breakfasts</span><i>••••</i><strong>Fresh</strong></li><li><span>Sandwiches & savouries</span><i>••••</i><strong>Plenty</strong></li><li><span>Cakes, pastries & afternoon tea</span><i>••••</i><strong>Speciality</strong></li></ul><a href="tel:+441492490218">Call about today’s specials →</a></div>
     </section>
 
     <section className="our-place" id="our-place">
@@ -41,11 +41,17 @@ export default function Home() {
       <div className="place-collage"><figure className="photo-frame frame-main"><div style={{backgroundImage:"url('/cafe/interior-clocks.png')"}}/><figcaption>A seat in the sunshine</figcaption></figure><figure className="photo-frame frame-small"><div style={{backgroundImage:"url('/cafe/interior-lights.png')"}}/><figcaption>Our famous lights</figcaption></figure><span className="ivy" aria-hidden="true">❧ ❧ ❧</span></div>
     </section>
 
+    <section className="reviews-rustic" id="reviews">
+      <div className="reviews-heading"><p className="section-kicker warm">Kind words from Google</p><h2>Loved by<br/><em>locals & visitors.</em></h2><a className="google-rating" href="https://www.google.com/search?q=Upper+Crust+Llandudno+reviews" target="_blank" rel="noreferrer"><strong>4.6</strong><span>★★★★★<small>46 Google reviews</small></span></a></div>
+      <div className="review-cards"><blockquote><span>“</span><p>Definitely worth the money.</p><footer>Dave Roberts · Google review</footer></blockquote><blockquote><span>“</span><p>A variety of delicious cakes.</p><footer>Sandra Cookson · Google review</footer></blockquote><blockquote><span>“</span><p>Tables inside and out.</p><footer>Mrs P · Google review</footer></blockquote></div>
+      <p className="rating-note">Google rating and review count checked August 2026.</p>
+    </section>
+
     <section className="cuppa"><div className="cuppa-image"/><div className="cuppa-copy"><Heart>Take a moment</Heart><p className="section-kicker">Stay for a cuppa</p><h2>Good coffee,<br/><em>no hurry.</em></h2><p>Whether you’re catching up with an old friend or enjoying five quiet minutes to yourself, we’ll keep the kettle warm.</p><a className="wood-button pale" href="#visit">Find your favourite seat</a></div></section>
 
-    <section className="gallery" aria-label="A taste of Upper Crust"><div className="gallery-text"><p className="section-kicker">From the table</p><h2>Made to<br/>make you smile.</h2><p>Follow along for daily specials, fresh bakes and the occasional behind-the-scenes moment.</p><a href="#">Follow us on Instagram ↗</a></div><div className="gallery-photo tall" style={{backgroundImage:"url('/cafe/hot-drinks.png')"}}/><div className="gallery-photo" style={{backgroundImage:"url('/cafe/brunch.png')"}}/><div className="gallery-photo" style={{backgroundImage:"url('/cafe/cakes.png')"}}/></section>
+    <section className="gallery" aria-label="A taste of Upper Crust"><div className="gallery-text"><p className="section-kicker">From the table</p><h2>Made to<br/>make you smile.</h2><p>Follow along for daily specials, fresh bakes and the occasional behind-the-scenes moment.</p><a href="https://www.facebook.com/UpperCrusttoo/" target="_blank" rel="noreferrer">Find us on Facebook ↗</a></div><div className="gallery-photo tall" style={{backgroundImage:"url('/cafe/hot-drinks.png')"}}/><div className="gallery-photo" style={{backgroundImage:"url('/cafe/brunch.png')"}}/><div className="gallery-photo" style={{backgroundImage:"url('/cafe/cakes.png')"}}/></section>
 
-    <section className="visit-rustic" id="visit"><div className="visit-title"><p className="script-line">There’s always a chair for you</p><h2>Come and get cosy.</h2></div><div className="visit-board"><div><span>Find us</span><strong>Central Llandudno<br/>Conwy, North Wales</strong><a href="https://maps.google.com/?q=Llandudno" target="_blank" rel="noreferrer">Get directions →</a></div><div><span>We’re open</span><strong>Mon—Sat · 8am—4pm<br/>Sunday · 9am—3pm</strong><small>Kitchen closes 30 minutes before.</small></div><div><span>Say hello</span><strong>01492 000 000<br/>hello@uppercrustllandudno.co.uk</strong><a href="mailto:hello@uppercrustllandudno.co.uk">Drop us a line →</a></div></div></section>
+    <section className="visit-rustic" id="visit"><div className="visit-title"><p className="script-line">There’s always a chair for you</p><h2>Come and get cosy.</h2></div><div className="visit-board"><div><span>Find us</span><strong>16 Mostyn Broadway<br/>Llandudno · LL30 1YL</strong><a href="https://www.google.com/maps/search/?api=1&query=Upper+Crust%2C+16+Mostyn+Broadway%2C+Llandudno+LL30+1YL" target="_blank" rel="noreferrer">Get directions →</a></div><div><span>We’re open</span><strong>Mon, Wed—Sat · 9:30—4<br/>Tuesday · 9:30—4:30<br/>Sunday · Closed</strong><small>Hours sourced from Google; holiday hours may vary.</small></div><div><span>Say hello</span><strong>01492 490218</strong><a href="tel:+441492490218">Give us a call →</a></div></div></section>
 
     <footer className="rustic-footer"><a className="rustic-brand" href="#top"><span className="brand-crest">UC</span><span><strong>Upper Crust</strong><small>Llandudno · North Wales</small></span></a><p>Good food. Warm hearts. Happy days.</p><a href="#top">Back to the top ↑</a></footer>
   </main>;

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { DM_Sans, Cormorant_Garamond, Oswald } from 'next/font/google';
 import './globals.css';
 import './rustic.css';
+import './reviews.css';
 const sans = DM_Sans({ variable: '--font-sans', subsets: ['latin'] });
 const serif = Cormorant_Garamond({ variable: '--font-serif', subsets: ['latin'], weight: ['500','600','700'], style: ['normal','italic'] });
 const condensed = Oswald({ variable: '--font-condensed', subsets: ['latin'] });
