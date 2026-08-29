@@ -1,31 +1,52 @@
-const menu = [
-  { name: 'The Welsh Rarebit', desc: 'Mature cheddar, local ale, mustard & spring onion on toasted sourdough', price: '£9.50' },
-  { name: 'The Great Orme', desc: 'Roast beef, horseradish cream, watercress & crispy onions', price: '£11.95' },
-  { name: 'Garden Club', desc: 'Grilled courgette, whipped feta, roast pepper & basil pesto', price: '£10.50' },
-  { name: 'Crust & Coast', desc: 'Welsh cheddar, smoked ham, apple chutney & dressed leaves', price: '£10.95' },
+const favourites = [
+  { name: 'Big Breakfast', detail: 'The full works, cooked fresh to order', image: '/cafe/breakfast.png', tag: 'All day' },
+  { name: 'Afternoon Tea', detail: 'Little sandwiches, homemade cakes & a proper pot of tea', image: '/cafe/afternoon-tea.png', tag: 'A treat' },
+  { name: 'Cakes & Bakes', detail: 'A cabinet full of something lovely', image: '/cafe/cakes.png', tag: 'Homemade' },
 ];
 
+function Heart({ children }: { children: React.ReactNode }) { return <span className="heart-note">♡<b>{children}</b></span>; }
+
 export default function Home() {
-  return <main>
-    <nav className="nav" aria-label="Main navigation">
-      <a className="brand" href="#top" aria-label="Upper Crust home"><span className="brand-mark">UC</span><span>Upper Crust<small>Llandudno · Est. 2014</small></span></a>
-      <div className="nav-links"><a href="#menu">Menu</a><a href="#story">Our story</a><a href="#visit">Find us</a></div>
-      <a className="nav-cta" href="tel:+441492000000">Give us a bell</a>
+  return <main className="rustic-site">
+    <nav className="rustic-nav" aria-label="Main navigation">
+      <a className="rustic-brand" href="#top" aria-label="Upper Crust home"><span className="brand-crest">UC</span><span><strong>Upper Crust</strong><small>Cosy café · Llandudno</small></span></a>
+      <div className="rustic-links"><a href="#food">Food</a><a href="#our-place">Our place</a><a href="#visit">Visit</a></div>
+      <a className="rustic-call" href="tel:+441492000000">Call us <span>→</span></a>
     </nav>
 
-    <section className="hero" id="top">
-      <div className="hero-copy"><p className="eyebrow">Independent café · Llandudno</p><h1>Proper food.<br/><em>Plenty of soul.</em></h1><p className="intro">Hand-stacked sandwiches, honest Welsh ingredients and a warm welcome—served in our little corner of the coast.</p><div className="hero-actions"><a className="button button-dark" href="#menu">See what’s cooking <span>↘</span></a><a className="text-link" href="#visit">Come and find us <span>→</span></a></div><div className="open-note"><span className="status-dot"/> Open today · 8am—4pm</div></div>
-      <div className="hero-visual"><div className="pendant pendant-one"/><div className="pendant pendant-two"/><div className="pendant pendant-three"/><div className="hero-image" role="img" aria-label="Fresh artisan sandwich on rustic paper"/><div className="stamp">Made<br/><strong>fresh</strong><br/>daily</div><div className="wood-label">Good things, between great bread.</div></div>
+    <header className="rustic-hero" id="top">
+      <div className="hero-photo" role="img" aria-label="The warm and rustic interior of Upper Crust café in Llandudno" />
+      <div className="hero-shade" />
+      <div className="fairy-lights" aria-hidden="true">{Array.from({length: 12}).map((_,i)=><i key={i}/>)}</div>
+      <div className="hero-message">
+        <p className="script-line">Come in, get cosy...</p>
+        <h1>Proper food.<br/><em>Warm hearts.</em></h1>
+        <p className="hero-intro">A friendly little café in Llandudno, full of character, homemade favourites and the smell of fresh coffee.</p>
+        <div className="hero-buttons"><a className="wood-button" href="#food">See what’s cooking</a><a className="soft-link" href="#visit">Plan your visit <span>↓</span></a></div>
+      </div>
+      <div className="open-board"><span>Today</span><strong>Open 8—4</strong><small>Pop in, no booking needed</small></div>
+      <div className="hanging-lamp lamp-a"/><div className="hanging-lamp lamp-b"/><div className="hanging-lamp lamp-c"/>
+    </header>
+
+    <section className="welcome-strip"><span>Freshly made</span><i>♥</i><span>Locally loved</span><i>♥</i><span>Always welcoming</span><i>♥</i><span>Good honest food</span></section>
+
+    <section className="food-section" id="food">
+      <div className="food-heading"><div><p className="section-kicker">From our kitchen</p><h2>Something lovely<br/>for <em>everyone.</em></h2></div><div className="heading-note"><Heart>Good mood food</Heart><p>Breakfasts, light lunches, comforting classics and plenty of homemade sweet things—served without fuss and with a smile.</p></div></div>
+      <div className="favourites-grid">{favourites.map((item,i)=><article className="favourite-card" key={item.name}><div className="food-photo" style={{backgroundImage:`url('${item.image}')`}}><span>{item.tag}</span></div><div className="food-caption"><span>0{i+1}</span><div><h3>{item.name}</h3><p>{item.detail}</p></div></div></article>)}</div>
+      <div className="chalk-specials"><div className="chalk-title"><span>Today’s good stuff</span><h3>From the chalkboard</h3></div><ul><li><span>Welsh rarebit on toast</span><i>••••</i><strong>£9.50</strong></li><li><span>Soup & a doorstep sandwich</span><i>••••</i><strong>£8.95</strong></li><li><span>Homemade cake & a cuppa</span><i>••••</i><strong>£6.50</strong></li></ul><a href="mailto:hello@uppercrustllandudno.co.uk">Ask about today’s specials →</a></div>
     </section>
 
-    <section className="ticker" aria-label="Our highlights"><span>Freshly baked</span><i>◆</i><span>Locally sourced</span><i>◆</i><span>Always welcoming</span><i>◆</i><span>Properly delicious</span></section>
+    <section className="our-place" id="our-place">
+      <div className="place-copy"><p className="section-kicker warm">Our little corner</p><h2>Full of stories.<br/><em>Made for staying.</em></h2><p>Nothing here quite matches—and that’s the point. Well-loved chairs sit beneath odd little clocks, warm bulbs glow from old wooden crates, and sanded scaffold boards bring a bit of honest, rustic charm.</p><p>It’s cosy, a little quirky and completely ours. Grab your favourite chair, settle in with something warm and let the world go by.</p><div className="place-signoff"><span>Made with</span><b>♥</b><span>in Llandudno</span></div></div>
+      <div className="place-collage"><figure className="photo-frame frame-main"><div style={{backgroundImage:"url('/cafe/interior-clocks.png')"}}/><figcaption>A seat in the sunshine</figcaption></figure><figure className="photo-frame frame-small"><div style={{backgroundImage:"url('/cafe/interior-lights.png')"}}/><figcaption>Our famous lights</figcaption></figure><span className="ivy" aria-hidden="true">❧ ❧ ❧</span></div>
+    </section>
 
-    <section className="menu-section" id="menu"><div className="section-heading"><div><p className="eyebrow">A few favourites</p><h2>Made to make<br/>your day.</h2></div><p>Our menu shifts with the seasons, but you’ll always find generously filled sandwiches, warming specials, brilliant bakes and really good coffee.</p></div><div className="menu-grid">{menu.map((item, i) => <article className="menu-item" key={item.name}><span className="menu-number">0{i + 1}</span><div><h3>{item.name}</h3><p>{item.desc}</p></div><strong>{item.price}</strong></article>)}</div><div className="menu-footer"><p>Vegetarian, vegan or gluten-free?</p><span>Just ask—we’re happy to help.</span><a href="mailto:hello@uppercrustllandudno.co.uk">View the full menu →</a></div></section>
+    <section className="cuppa"><div className="cuppa-image"/><div className="cuppa-copy"><Heart>Take a moment</Heart><p className="section-kicker">Stay for a cuppa</p><h2>Good coffee,<br/><em>no hurry.</em></h2><p>Whether you’re catching up with an old friend or enjoying five quiet minutes to yourself, we’ll keep the kettle warm.</p><a className="wood-button pale" href="#visit">Find your favourite seat</a></div></section>
 
-    <section className="story" id="story"><div className="story-images"><div className="interior-image"/><div className="detail-image"/><span className="tape">Pull up a chair</span></div><div className="story-copy"><p className="eyebrow light">A little bit different</p><h2>Built with character.<br/><em>Run with heart.</em></h2><p>Upper Crust isn’t polished and precious—and that’s just how we like it. Sanded scaffold boards, well-loved chairs and a constellation of mismatched lights make our space feel lived-in from the moment you arrive.</p><p>Come for a quick coffee, stay for lunch, or settle in and watch Llandudno wander by. There’s always a seat with your name on it.</p><a className="button button-light" href="#visit">Our corner of Llandudno <span>↘</span></a></div></section>
+    <section className="gallery" aria-label="A taste of Upper Crust"><div className="gallery-text"><p className="section-kicker">From the table</p><h2>Made to<br/>make you smile.</h2><p>Follow along for daily specials, fresh bakes and the occasional behind-the-scenes moment.</p><a href="#">Follow us on Instagram ↗</a></div><div className="gallery-photo tall" style={{backgroundImage:"url('/cafe/hot-drinks.png')"}}/><div className="gallery-photo" style={{backgroundImage:"url('/cafe/brunch.png')"}}/><div className="gallery-photo" style={{backgroundImage:"url('/cafe/cakes.png')"}}/></section>
 
-    <section className="visit" id="visit"><p className="eyebrow">Come on in</p><h2>Your table’s<br/><em>waiting.</em></h2><div className="visit-grid"><div><span className="label">Find us</span><p>Central Llandudno<br/>Conwy, North Wales</p><a href="https://maps.google.com/?q=Llandudno" target="_blank" rel="noreferrer">Get directions ↗</a></div><div><span className="label">Opening hours</span><p>Mon—Sat&nbsp;&nbsp; 8am—4pm<br/>Sunday&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9am—3pm</p><small>Kitchen closes 30 mins before.</small></div><div><span className="label">Say hello</span><p>01492 000 000<br/>hello@uppercrustllandudno.co.uk</p><a href="mailto:hello@uppercrustllandudno.co.uk">Drop us a line →</a></div></div></section>
+    <section className="visit-rustic" id="visit"><div className="visit-title"><p className="script-line">There’s always a chair for you</p><h2>Come and get cosy.</h2></div><div className="visit-board"><div><span>Find us</span><strong>Central Llandudno<br/>Conwy, North Wales</strong><a href="https://maps.google.com/?q=Llandudno" target="_blank" rel="noreferrer">Get directions →</a></div><div><span>We’re open</span><strong>Mon—Sat · 8am—4pm<br/>Sunday · 9am—3pm</strong><small>Kitchen closes 30 minutes before.</small></div><div><span>Say hello</span><strong>01492 000 000<br/>hello@uppercrustllandudno.co.uk</strong><a href="mailto:hello@uppercrustllandudno.co.uk">Drop us a line →</a></div></div></section>
 
-    <footer><a className="brand footer-brand" href="#top"><span className="brand-mark">UC</span><span>Upper Crust<small>Llandudno · North Wales</small></span></a><p>Good food. Good mood. Good people.</p><a href="#top">Back to top ↑</a></footer>
+    <footer className="rustic-footer"><a className="rustic-brand" href="#top"><span className="brand-crest">UC</span><span><strong>Upper Crust</strong><small>Llandudno · North Wales</small></span></a><p>Good food. Warm hearts. Happy days.</p><a href="#top">Back to the top ↑</a></footer>
   </main>;
 }
