@@ -9,7 +9,7 @@ function Heart({ children }: { children: React.ReactNode }) { return <span class
 export default function Home() {
   return <main className="rustic-site">
     <nav className="rustic-nav" aria-label="Main navigation">
-      <a className="rustic-brand" href="#top" aria-label="Upper Crust home"><span className="brand-crest">UC</span><span><strong>Upper Crust</strong><small>Cosy café · Llandudno</small></span></a>
+      <a className="rustic-brand" href="#top" aria-label="Upper Crust home"><span className="brand-mark"><img src="/upper-crust-cup-logo.svg" alt="" /></span><span><strong>Upper Crust</strong><small>Cosy café · Llandudno</small></span></a>
       <div className="rustic-links"><a href="#food">Food</a><a href="#our-place">Our place</a><a href="#reviews">Reviews</a><a href="#visit">Visit</a></div>
       <a className="rustic-call" href="tel:+441492490218">Call us <span>→</span></a>
     </nav>
@@ -53,6 +53,6 @@ export default function Home() {
 
     <section className="visit-rustic" id="visit"><div className="visit-title"><p className="script-line">There’s always a chair for you</p><h2>Come and get cosy.</h2></div><div className="visit-board"><div><span>Find us</span><strong>16 Mostyn Broadway<br/>Llandudno · LL30 1YL</strong><a href="https://www.google.com/maps/search/?api=1&query=Upper+Crust%2C+16+Mostyn+Broadway%2C+Llandudno+LL30+1YL" target="_blank" rel="noreferrer">Get directions →</a></div><div><span>We’re open</span><strong>Mon, Wed—Sat · 9:30—4<br/>Tuesday · 9:30—4:30<br/>Sunday · Closed</strong><small>Hours sourced from Google; holiday hours may vary.</small></div><div><span>Say hello</span><strong>01492 490218</strong><a href="tel:+441492490218">Give us a call →</a></div></div></section>
 
-    <footer className="rustic-footer"><a className="rustic-brand" href="#top"><span className="brand-crest">UC</span><span><strong>Upper Crust</strong><small>Llandudno · North Wales</small></span></a><p>Good food. Warm hearts. Happy days.</p><a href="#top">Back to the top ↑</a></footer>
+    <footer className="rustic-footer"><a className="rustic-brand" href="#top" aria-label="Upper Crust home"><span className="brand-mark"><img src="/upper-crust-cup-logo.svg" alt="" /></span><span><strong>Upper Crust</strong><small>Llandudno · North Wales</small></span></a><p>Good food. Warm hearts. Happy days.</p><a href="#top">Back to the top ↑</a></footer>
   </main>;
 }
