@@ -1,28 +1,21 @@
 .rustic-nav {
-  height: 88px;
+  height: 96px;
 }
 
 .brand-mark {
-  width: 70px;
-  height: 70px;
-  flex: 0 0 70px;
+  width: 78px;
+  height: 82px;
+  flex: 0 0 78px;
   display: grid;
   place-items: center;
-  border: 2px solid #d5a650;
-  border-radius: 50%;
-  background: transparent;
-  box-shadow:
-    inset 0 0 0 3px #1b1d1b,
-    inset 0 0 0 5px #d5a650,
-    0 4px 18px rgb(0 0 0 / 34%);
-  transform: rotate(-2deg);
 }
 
 .brand-mark img {
   display: block;
-  width: 49px;
-  height: 54px;
+  width: 72px;
+  height: 79px;
   object-fit: contain;
+  filter: drop-shadow(0 3px 7px rgb(0 0 0 / 32%));
 }
 
 @media (max-width: 720px) {
@@ -31,13 +24,13 @@
   }
 
   .brand-mark {
-    width: 58px;
-    height: 58px;
-    flex-basis: 58px;
+    width: 62px;
+    height: 66px;
+    flex-basis: 62px;
   }
 
   .brand-mark img {
-    width: 40px;
-    height: 44px;
+    width: 58px;
+    height: 64px;
   }
 }
